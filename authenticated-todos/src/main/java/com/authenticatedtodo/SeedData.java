@@ -1,13 +1,27 @@
-// provided by Vivek Vishwanath
+package com.authenticatedtodo;// provided by Vivek Vishwanath
+
+import com.authenticatedtodo.model.Role;
+import com.authenticatedtodo.model.Todo;
+import com.authenticatedtodo.model.User;
+import com.authenticatedtodo.model.UserRoles;
+import com.authenticatedtodo.repository.RoleRepository;
+import com.authenticatedtodo.repository.TodoRepository;
+import com.authenticatedtodo.repository.UserRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 @Transactional
 @Component
 public class SeedData implements CommandLineRunner {
     RoleRepository rolerepos;
     UserRepository userrepos;
-    ToDoRepository todorepos;
+    TodoRepository todorepos;
 
-    public SeedData(RoleRepository rolerepos, UserRepository userrepos, ToDoRepository todorepos) {
+    public SeedData(RoleRepository rolerepos, UserRepository userrepos, TodoRepository todorepos) {
         this.rolerepos = rolerepos;
         this.userrepos = userrepos;
         this.todorepos = todorepos;
